@@ -1,0 +1,56 @@
+openapi: 3.0.1
+info:
+  title: Transaction
+  description: Documentação da api.
+  version: 1.0.0
+paths:
+  /users:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                document:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                userType:
+                  type: string
+                balance:
+                  type: number
+      responses:
+        '201':
+          description: User created
+    get:
+      responses:
+        "200":
+          description: This is ok
+  /transaction:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                senderId:
+                  type: integer
+                receiverId:
+                  type: integer
+                value:
+                  type: number
+      responses:
+        '201':
+          description: Transaction created
+    get:
+      responses:
+        "200":
+          description: This is ok
